@@ -7,7 +7,7 @@ A few known wireless cards that use this driver include:
 
 Currently tested with Linux kernel 4.19.97-v7+ on Raspberry Pi 3 B+.
 
-### Manual install
+### Manual installation
 
 To build, you have to retrieve source and run `make`.
 If via Git, do following:
