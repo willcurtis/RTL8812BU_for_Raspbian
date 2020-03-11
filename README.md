@@ -13,7 +13,8 @@ To build, you have to retrieve source and run `make`.
 If via Git, do following:
 
 ```bash
-git clone https://github.com/fastoe/RTL8812BU_for_Raspbian.git
+sudo apt-get install raspberrypi-kernel-headers
+git clone https://github.com/fastoe/RTL8812BU_for_Raspbian
 cd RTL8812BU_for_Raspbian
 make
 sudo make install
