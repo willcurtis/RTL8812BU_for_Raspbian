@@ -21,4 +21,4 @@ sudo make install
 sudo reboot
 ```
 
-Enjoy WiFi!
+Enjoy!
