@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ * Copyright(c) 2007 - 2017  Realtek Corporation.
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of version 2 of the GNU General Public License as
@@ -8,29 +8,52 @@
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
  * more details.
  *
- * You should have received a copy of the GNU General Public License along with
- * this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110, USA
+ * The full GNU General Public License is included in this distribution in the
+ * file called LICENSE.
  *
+ * Contact Information:
+ * wlanfae <wlanfae@realtek.com>
+ * Realtek Corporation, No. 2, Innovation Road II, Hsinchu Science Park,
+ * Hsinchu 300, Taiwan.
  *
- ******************************************************************************/
+ * Larry Finger <Larry.Finger@lwfinger.net>
+ *
+ *****************************************************************************/
 #if (RTL8822B_SUPPORT == 1)
-#ifndef	__ODM_RTL8822B_H__
+#ifndef __ODM_RTL8822B_H__
 #define __ODM_RTL8822B_H__
 
-void
-phydm_somlrxhp_setting(
-	struct 	PHY_DM_STRUCT		*p_dm_odm,
-	boolean switch_soml
-);
+#ifdef DYN_ANT_WEIGHTING_SUPPORT
+void phydm_dynamic_ant_weighting_8822b(void *dm_void);
+#endif
 
-void
-phydm_hwsetting_8822b(
-	struct PHY_DM_STRUCT		*p_dm_odm
-);
+#ifdef CONFIG_MCC_DM
+#ifdef DYN_ANT_WEIGHTING_SUPPORT
+void phydm_dynamic_ant_weighting_mcc_8822b(void *dm_void);
+#endif /*#ifdef DYN_ANT_WEIGHTING_SUPPORT*/
+void phydm_fill_mcccmd( void *dm_void, u8 regid, u16 reg_add,	u8 val0,	u8 val1);
+u8 phydm_check(void *dm_void);
+void phydm_mcc_init (void *dm_void);
+void phydm_mcc_switch(void *dm_void);
+#endif /*#ifdef CONFIG_MCC_DM*/
 
-#endif	/* #define __ODM_RTL8822B_H__ */
+
+void phydm_1rcca_setting(struct dm_struct *dm, boolean enable_1rcca);
+
+void phydm_somlrxhp_setting(struct dm_struct *dm, boolean switch_soml);
+
+#ifdef CONFIG_DYNAMIC_BYPASS
+void phydm_pw_sat_8822b(struct dm_struct *dm, u8 rssi_value);
+#endif
+
+void phydm_hwsetting_8822b(struct dm_struct *dm);
+
+void phydm_config_tx2path_8822b(struct dm_struct *dm,
+				enum wireless_set wireless_mode,
+				boolean is_tx2_path);
+
+#endif /* @#define __ODM_RTL8822B_H__ */
 #endif

@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ * Copyright(c) 2007 - 2017  Realtek Corporation.
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of version 2 of the GNU General Public License as
@@ -8,31 +8,36 @@
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
  * more details.
  *
- * You should have received a copy of the GNU General Public License along with
- * this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110, USA
+ * The full GNU General Public License is included in this distribution in the
+ * file called LICENSE.
  *
+ * Contact Information:
+ * wlanfae <wlanfae@realtek.com>
+ * Realtek Corporation, No. 2, Innovation Road II, Hsinchu Science Park,
+ * Hsinchu 300, Taiwan.
  *
- ******************************************************************************/
+ * Larry Finger <Larry.Finger@lwfinger.net>
+ *
+ *****************************************************************************/
 
-#ifndef	__HALRF_FEATURES_H__
-#define __HALRF_FEATURES
+#ifndef __HALRF_FEATURES_H__
+#define __HALRF_FEATURES_H__
 
 #if (DM_ODM_SUPPORT_TYPE == ODM_WIN)
 
-	#define	CONFIG_HALRF_POWERTRACKING	1
+#define CONFIG_HALRF_POWERTRACKING 1
 
 #elif (DM_ODM_SUPPORT_TYPE == ODM_AP)
 
-	#define	CONFIG_HALRF_POWERTRACKING	1
+#define CONFIG_HALRF_POWERTRACKING 1
 
 #elif (DM_ODM_SUPPORT_TYPE == ODM_CE)
 
-	#define	CONFIG_HALRF_POWERTRACKING	1
+#define CONFIG_HALRF_POWERTRACKING 1
 
 #endif
 
-#endif
+#endif /*#ifndef __HALRF_FEATURES_H__*/
