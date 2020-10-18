@@ -14,8 +14,7 @@ Currently tested with Linux RaspberryPi 5.4.51-v7l+/4.19.118-v7+/4.19.97-v7+ on:
 
 ### Manual installation
 
-To build, you have to retrieve source and run `make`.
-If via Git, do following:
+To build, you have to retrieve source and run `make`, do following:
 
 ```bash
 sudo apt update
