@@ -18,13 +18,27 @@ To build, you have to retrieve source and run `make`, do following:
 
 ```bash
 sudo apt update
-sudo apt upgrade
-sudo apt install git dnsmasq hostapd bc build-essential dkms raspberrypi-kernel-headers
+sudo apt install -y bc git dkms build-essential raspberrypi-kernel-headers
 git clone https://github.com/fastoe/RTL8812BU_for_Raspbian
 cd RTL8812BU_for_Raspbian
 make
 sudo make install
 sudo reboot
 ```
+
+If fails to compile like this:
+```
+pi@raspberrypi:~/RTL8812BU_for_Raspbian $ make
+make ARCH=arm CROSS_COMPILE= -C /lib/modules/5.4.51-v7+/build M=/home/pi/RTL8812BU_for_Raspbian  modules
+make[1]: *** /lib/modules/5.4.51-v7+/build: No such file or directory.  Stop.
+make: *** [Makefile:2284: modules] Error 2
+```
+please run the `rpi-source` command to install the kernel headers for kernel 5.4.51-v7+:
+```
+sudo apt install bc git flex bison libssl-dev
+sudo wget https://raw.githubusercontent.com/RPi-Distro/rpi-source/master/rpi-source -O /usr/local/bin/rpi-source && sudo chmod +x /usr/local/bin/rpi-source && /usr/local/bin/rpi-source -q --tag-update
+rpi-source
+```
+then, re-make again.
 
 Enjoy!
