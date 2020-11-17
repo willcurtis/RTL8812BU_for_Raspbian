@@ -46,11 +46,13 @@ then, re-make again.
 Below are a few known bugs,
 - Always required autenthication without connect on 5GHz band
 - Short disconnects every few seconds on 5GHz band
+
 the above problems are caused by power saving, so we can disable the 8812bu WiFi adapter power saving.
 ```
 modprobe -r 88x2bu
 modprobe 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0
 ```
+
 
 
 Enjoy!
