@@ -59,7 +59,7 @@ When the current is around 100mA, it never disconnects.
 
 ![image](https://www.fastoe.com/images/2020/11/disable-power-saving-current.jpg)
 
-140 mA at full speed download.
+140 mA at full speed download (22MB/s).
 
 ![image](https://www.fastoe.com/images/2020/11/ping-valuedownload-speed.jpg)
 
