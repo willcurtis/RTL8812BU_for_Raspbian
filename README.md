@@ -53,6 +53,6 @@ modprobe -r 88x2bu
 modprobe 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0
 ```
 
-
+When the current is around 0.1 Amps, it never disconnects.
 
 Enjoy!
