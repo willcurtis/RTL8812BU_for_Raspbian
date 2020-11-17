@@ -57,6 +57,6 @@ echo "options 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0" | sudo tee /
 
 When the current is around 100mA, it never disconnects.
 
-![image](https://www.fastoe.com/images/2020/11/disable-power-saving-current-800x599.jpg)
+![image](https://www.fastoe.com/images/2020/11/disable-power-saving-current.jpg)
 
 Enjoy!
