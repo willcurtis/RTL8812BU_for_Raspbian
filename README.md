@@ -51,6 +51,7 @@ the above problems are caused by power saving. First, make sure that the power s
 ```
 modprobe -r 88x2bu
 modprobe 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0
+echo "options 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0" | sudo tee /etc/modprobe.d/88x2bu.conf
 ```
 
 When the current is around 100mA, it never disconnects.
