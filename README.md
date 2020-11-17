@@ -53,6 +53,8 @@ modprobe -r 88x2bu
 modprobe 88x2bu rtw_power_mgnt=0 rtw_ips_mode=0 rtw_enusbss=0
 ```
 
-When the current is around 100 mA, it never disconnects.
+When the current is around 100mA, it never disconnects.
+
+![image](https://www.fastoe.com/images/2020/11/disable-power-saving-current-800x599.jpg)
 
 Enjoy!
