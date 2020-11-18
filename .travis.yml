@@ -1,7 +1,11 @@
 language: c
-dist: focal
+arch:
+  - arm32
+services:
+  - docker
 before_install:
-  - sudo apt install -y bc git flex bison libssl-dev
-  - sudo wget https://raw.githubusercontent.com/RPi-Distro/rpi-source/master/rpi-source -O /usr/local/bin/rpi-source && sudo chmod +x /usr/local/bin/rpi-source && /usr/local/bin/rpi-source -q --tag-update
-  - rpi-source
-script: make
+  - docker build -t me/image .
+script:
+  # One of those lines is necessary otherwise travis runs 'rake' by default.
+  - true
+  - echo "Success"
