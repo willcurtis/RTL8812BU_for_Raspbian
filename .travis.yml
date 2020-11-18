@@ -1,11 +1,9 @@
 language: c
-arch:
-  - arm32
-services:
-  - docker
+dist: focal
 before_install:
-  - docker build -t me/image .
-script:
-  # One of those lines is necessary otherwise travis runs 'rake' by default.
-  - true
-  - echo "Success"
+  - sudo apt -y install git
+  - mkdir raspberrypi && cd raspberrypi
+  - git clone git://github.com/raspberrypi/tools.git
+  - export PATH=$PATH:$HOME/raspberrypi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
+  - export PATH=$PATH:$HOME/raspberrypi/tools/arm-bcm2708-linux-gnueabi/bin
+script: arm-linux-gnueabihf-gcc -v
