@@ -2276,6 +2276,12 @@ obj-$(CONFIG_RTL8822BU) := $(MODULE_NAME).o
 
 endif
 
+########### TRAVIS-CI #################################
+ifeq ($(TRAVIS), true)
+KSRC := /lib/modules/5.4.51-v7+/build
+endif
+########### TRAVIS-CI #################################
+
 export CONFIG_RTL8822BU = m
 
 all: modules
