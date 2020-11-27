@@ -50,7 +50,7 @@ then, re-make again.
 ### Known Issues
 
 Below are a few known bugs,
-- Always required autenthication without connect on 5GHz band
+- Always required authentication without connect on 5GHz band
 - Short disconnects every few seconds on 5GHz band
 
 the above problems are caused by power saving. First, make sure that the power supply of your Raspberry Pi can provide 3A current, then we can disable the 8812bu WiFi adapter power saving.
